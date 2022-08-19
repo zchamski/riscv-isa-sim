@@ -26,6 +26,9 @@ class htif_t : public chunked_memif_t
   int run();
   bool done();
   int exit_code();
+  void set_exitcode(int code) { exitcode = code; }
+  unsigned long int get_tohost_addr(void) { return (unsigned long int) tohost_addr; }
+  void set_tohost_addr(unsigned long int addr) { tohost_addr = (addr_t) addr; }
 
   virtual memif_t& memif() { return mem; }
 
